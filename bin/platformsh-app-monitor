@@ -1,0 +1,8 @@
+#!/bin/bash
+
+EDGE_HOSTNAME=`platform environment:info edge_hostname`
+STATUS_CODE=`curl -s -w "%{http_code}\n" "https://www.${EDGE_HOSTNAME}" -o /dev/null`
+
+if [ $STATUS_CODE -eq 502 ]; then
+
+fi
